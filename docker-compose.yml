@@ -3,8 +3,8 @@ services:
   snake:
     image: 'bermics/chatapphw:latest'
     environment:
-      - PORT=3700
+      - PORT=3000
     ports:
-      - "80:3700"
+      - "80:3000"
     volumes:
       - ./:/app
