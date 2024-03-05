@@ -1,7 +1,7 @@
 node('App-Server-CWEB2140')
 {
     def app
-    stage('Cloning Git')
+    stage('CLONE GIT REPOSITORY')
     {
         // Let's make sure we have the repository cloned to our workspace
         checkout scm
@@ -14,13 +14,13 @@ node('App-Server-CWEB2140')
     }
 
 
-    stage('Build-and-Tag')
+    stage('BUILD-AND-TAG')
     {
         app = docker.build('bermics/chatapphw')
 
     }
 
-    stage('Post-to-dockerhub')
+    stage('POST-TO-DOCKERHUB')
     {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_credentials')
         {
@@ -29,7 +29,7 @@ node('App-Server-CWEB2140')
 
 
     }
-    stage('Pull-image and Deploy')
+    stage('DEPLOYMENT')
     {
         sh "docker-compose down"
         sh "docker-compose up -d"
