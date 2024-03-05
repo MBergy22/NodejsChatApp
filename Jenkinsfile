@@ -7,6 +7,11 @@ node('App-Server-CWEB2140')
         checkout scm
 
     }
+    stage('SCA-SAST-SYNK-TEST')
+    {
+        
+
+    }
 
 
     stage('Build-and-Tag')
