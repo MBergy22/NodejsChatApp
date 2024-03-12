@@ -10,7 +10,7 @@ node('App-Server-CWEB2140')
     stage('SCA-SAST-SYNK-TEST')
     {
         snykSecurity(
-            snykInstallation: 'Snyk-Latest',
+            snykInstallation: 'Snyk-latest',
             snykTokenId: 'Snyk_ID',
             severity: 'critical'
             )
